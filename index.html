@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous Papers Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>📚 Previous Papers Finder</h1>
+        <p>Find previous question papers quickly by subject, year and topic</p>
+    </header>
+
+    <!-- Dashboard -->
+    <section class="dashboard">
+
+        <div class="card">
+            <h3>Total Papers</h3>
+            <span id="totalPapers">0</span>
+        </div>
+
+        <div class="card">
+            <h3>Subjects</h3>
+            <span id="totalSubjects">0</span>
+        </div>
+
+        <div class="card">
+            <h3>Years</h3>
+            <span id="totalYears">0</span>
+        </div>
+
+        <div class="card">
+            <h3>Topics</h3>
+            <span id="totalTopics">0</span>
+        </div>
+
+    </section>
+
+
+    <!-- Search and Filters -->
+    <section class="search-panel">
+
+        <h2>🔎 Find Previous Papers</h2>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="subjectSearch"
+                placeholder="Search subject..."
+            >
+
+            <select id="yearFilter">
+                <option value="all">All Years</option>
+            </select>
+
+            <select id="topicFilter">
+                <option value="all">All Topics</option>
+            </select>
+
+            <button onclick="searchPapers()">
+                Search
+            </button>
+
+            <button
+                class="reset"
+                onclick="resetFilters()">
+                Reset
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Topic Index -->
+    <section class="panel">
+
+        <h2>📑 Topic Index</h2>
+
+        <div id="topicIndex" class="topics">
+        </div>
+
+    </section>
+
+
+    <!-- Papers -->
+    <section class="panel">
+
+        <div class="result-header">
+
+            <h2>📄 Previous Question Papers</h2>
+
+            <span id="resultCount">
+                0 papers found
+            </span>
+
+        </div>
+
+        <div id="paperList" class="paper-grid">
+        </div>
+
+    </section>
+
+
+    <!-- Add Paper -->
+    <section class="panel">
+
+        <h2>➕ Add Previous Paper</h2>
+
+        <form id="paperForm">
+
+            <input
+                type="text"
+                id="paperSubject"
+                placeholder="Subject"
+                required
+            >
+
+            <input
+                type="number"
+                id="paperYear"
+                placeholder="Year"
+                min="2000"
+                max="2100"
+                required
+            >
+
+            <input
+                type="text"
+                id="paperTopics"
+                placeholder="Topics (comma separated)"
+                required
+            >
+
+            <input
+                type="text"
+                id="paperExam"
+                placeholder="Exam / Semester"
+                required
+            >
+
+            <input
+                type="text"
+                id="paperLink"
+                placeholder="Paper URL"
+            >
+
+            <button type="submit">
+                Add Paper
+            </button>
+
+        </form>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
